@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.example.volunteer.model.User;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -25,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
 //    private Button toolButton;
     private FrameLayout frame;
     private DrawerLayout drawerLayout;
+
+    // testing
+    User testUser = new User("ahmed", "sidd", 234);
+
+    public User getUserData() {
+        return testUser;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

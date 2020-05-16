@@ -1,12 +1,17 @@
 package com.example.volunteer;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.example.volunteer.model.User;
 
 
 /**
@@ -23,6 +28,22 @@ public class DashboardFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    //testing user pulling data
+//
+    //User testUser = ((MainActivity) getContext().getApplicationContext()).getUserData();
+
+    private TextView userTextView;
+    protected MainActivity mActivity;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if (context instanceof MainActivity){
+            mActivity =(MainActivity) context;
+        }
+    }
 
     public DashboardFragment() {
         // Required empty public constructor
@@ -53,6 +74,15 @@ public class DashboardFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        User testUser = mActivity.getUserData();
+        userTextView = (TextView) mActivity.findViewById(R.id.firstName);
+        userTextView.setText("Shreyas");
     }
 
     @Override
