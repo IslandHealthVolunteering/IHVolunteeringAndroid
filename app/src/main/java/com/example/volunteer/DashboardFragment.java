@@ -2,16 +2,13 @@ package com.example.volunteer;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.volunteer.model.User;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 
 /**
@@ -30,8 +27,6 @@ public class DashboardFragment extends Fragment {
     private String mParam2;
 
     //testing user pulling data
-//
-    //User testUser = ((MainActivity) getContext().getApplicationContext()).getUserData();
 
     private TextView userTextView;
     protected MainActivity mActivity;
@@ -41,7 +36,7 @@ public class DashboardFragment extends Fragment {
         super.onAttach(context);
 
         if (context instanceof MainActivity){
-            mActivity =(MainActivity) context;
+            mActivity = (MainActivity) context;
         }
     }
 
@@ -79,10 +74,6 @@ public class DashboardFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        User testUser = mActivity.getUserData();
-        userTextView = (TextView) mActivity.findViewById(R.id.firstName);
-        userTextView.setText("Shreyas");
     }
 
     @Override
